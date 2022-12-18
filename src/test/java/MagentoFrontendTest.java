@@ -38,8 +38,80 @@ public class MagentoFrontendTest {
     }
 
     @Test
-    public void testCreateAccont() {
+    public void testCreateAccount() {
+        // Rayhan
 
     }
 
+    @Test
+    public void testLogin() {
+        // Rayhan
+
+    }
+
+    @Test
+    public void testSelectProduct() {
+        // Rayhan
+        // Membuka halaman produk dengan mengklik produk yang ada di Men
+    }
+
+    @Test
+    public void testAddToCart() {
+        // Eros
+        // Membuka halaman produk dengan mengklik produk yang ada di Men
+        // Menambahkan ke Cart
+    }
+
+    @Test
+    public void testCheckout() {
+        // Eros
+        // Membuka halaman produk dengan mengklik produk yang ada di Men
+        // Menambahkan ke Cart
+        // Membuka Cart lalu Proceed to checkout (pastikan itemnya sama dengan yang kita pilih di cart)
+    }
+
+    @Test
+    public void testOrderSummary() {
+        // Eros
+        // Membuka halaman produk dengan mengklik produk yang ada di Men
+        // Menambahkan ke Cart
+        // Membuka Cart lalu Proceed to checkout (pastikan itemnya sama dengan yang kita pilih di cart)
+        // Memastikan order summary sudah sama
+    }
+
+    @Test
+    public void testShippingAddress() {
+        // Rafid
+        // Membuka halaman produk dengan mengklik produk yang ada di Men
+        // Menambahkan ke Cart
+        // Membuka Cart lalu Proceed to checkout (pastikan itemnya sama dengan yang kita pilih di cart)
+        // Membuka order summary
+        // Mengisi shipping address
+        // Next, lalu memastikan shipping address sudah sesuai
+    }
+
+    @Test
+    public void testPlaceOrder() {
+        // Rafid
+        // Membuka halaman produk dengan mengklik produk yang ada di Men
+        // Menambahkan ke Cart
+        // Membuka Cart lalu Proceed to checkout (pastikan itemnya sama dengan yang kita pilih di cart)
+        // Membuka order summary
+        // Mengisi shipping address
+        // Next
+        // Pastikan yang kita order sama
+        // Place Order
+    }
+
+    @Test
+    public void testOrderIsTheSame() {
+        // Rafid
+        // Membuka halaman produk dengan mengklik produk yang ada di Men
+        // Menambahkan ke Cart
+        // Membuka Cart lalu Proceed to checkout (pastikan itemnya sama dengan yang kita pilih di cart)
+        // Membuka order summary
+        // Mengisi shipping address
+        // Next >  Place Order
+        // Membuka nomor order, lalu memastikan bahwa itemnya sama dengan yang kita order
+    }
 }
