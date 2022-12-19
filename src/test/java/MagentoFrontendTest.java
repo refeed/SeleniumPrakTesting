@@ -13,7 +13,7 @@ public class MagentoFrontendTest {
 
     @BeforeClass
     public static void beforeClass() {
-        System.setProperty("webdriver.chrome.driver","resources/chromedriver");
+        System.setProperty("webdriver.chrome.driver","C:\\Users\\LENOVO\\Downloads\\chromedriver.exe");
     }
 
     @Before
@@ -37,13 +37,28 @@ public class MagentoFrontendTest {
     @Test
     public void testCreateAccount() {
         // Rayhan
+        MagentoHomePage homePage = new MagentoHomePage(driver);
+        homePage.clickCreateAnAccount();
 
+        CreateAccountPage create = new CreateAccountPage(driver);
+        create.setFirstName("kelompok");
+        create.setLastName("testing");
+        create.clickSubscribe();
+        create.setEmail("rafidrayhaneros2@gmail.com");
+        create.setPassword("Bismillahselesai123");
+        create.setConfirmPassword("Bismillahselesai123");
+        create.clickCreateAccount();
+        MagentoMyAccountPage success = new MagentoMyAccountPage(driver);
+        assertEquals("https://magento.softwaretestingboard.com/customer/account/", driver.getCurrentUrl());
     }
 
     @Test
     public void testLogin() {
         // Rayhan
-
+        MagentoHomePage homePage = new MagentoHomePage(driver);
+        MagentoLoginPage loginPage = homePage.clickLoginButton();
+        MagentoMyAccountPage myAccountPage = loginPage.login("rafidrayhaneros@gmail.com", "Bismillahselesai123");
+        assertEquals("https://magento.softwaretestingboard.com/", driver.getCurrentUrl());
     }
 
     @Test
