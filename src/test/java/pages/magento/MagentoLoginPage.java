@@ -2,9 +2,6 @@ package pages.magento;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.Helper;
 
 
@@ -19,9 +16,10 @@ public class MagentoLoginPage {
         this.driver = driver;
     }
 
-    public void login(String email, String password) {
+    public MagentoMyAccountPage login(String email, String password) {
         Helper.getByWaitingElementToBeVisible(driver, this.password).sendKeys(password);
         Helper.getByWaitingElementToBeVisible(driver, this.email).sendKeys(email);
         Helper.getByWaitingElementToBeVisible(driver, loginButton).click();
+        return new MagentoMyAccountPage(driver);
     }
 }
