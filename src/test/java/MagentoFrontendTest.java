@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import pages.magento.MagentoHomePage;
 import pages.magento.MagentoMyAccountPage;
 import pages.magento.MagentoLoginPage;
 
@@ -117,9 +118,10 @@ public class MagentoFrontendTest {
 
     @Test
     public void testLogout() {
-        driver.get("https://magento.softwaretestingboard.com/customer/account/login/");
-        MagentoLoginPage loginPage = new MagentoLoginPage(driver);
+        MagentoHomePage homePage = new MagentoHomePage(driver);
+        MagentoLoginPage loginPage = homePage.clickLoginButton();
         MagentoMyAccountPage myAccountPage = loginPage.login("rafidrayhaneros@gmail.com", "Bismillahselesai123");
         myAccountPage.clickLogoutButton();
+        assertEquals("https://magento.softwaretestingboard.com/customer/account/logoutSuccess/", driver.getCurrentUrl());
     }
 }
