@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import pages.magento.MagentoLoginPage;
 import pages.saucedemo.SauceDemoLoginPage;
 
 import static org.junit.Assert.assertEquals;
@@ -82,7 +83,7 @@ public class MagentoFrontendTest {
     @Test
     public void testShippingAddress() {
         // Rafid
-        // Membuka halaman produk dengan mengklik produk yang ada di Men
+        // Membuka halaman produk dengan mengklik produk yang ada di Menu
         // Menambahkan ke Cart
         // Membuka Cart lalu Proceed to checkout (pastikan itemnya sama dengan yang kita pilih di cart)
         // Membuka order summary
@@ -113,5 +114,12 @@ public class MagentoFrontendTest {
         // Mengisi shipping address
         // Next >  Place Order
         // Membuka nomor order, lalu memastikan bahwa itemnya sama dengan yang kita order
+    }
+
+    @Test
+    public void testLogout() {
+        driver.get("https://magento.softwaretestingboard.com/customer/account/login/");
+        MagentoLoginPage loginPage = new MagentoLoginPage(driver);
+        loginPage.login("rafidrayhaneros@gmail.com", "Bismillahselesai123");
     }
 }
